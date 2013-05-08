@@ -35,7 +35,7 @@ To demonstrate the problems here, I ran the following test of this project in Ap
 
 #### Java Promise API Results
 
-If you look at `app/controllers/WebServices` I have a controller action called javaBad.
+If you look at `app/controllers/WebServices` I have a controller action called `javaBad`.
 It uses the Java Promise API to running intense computation takes 30 milliseconds (sleeping).
 
     [~] $   /usr/local/Cellar/ab/2.4.3/bin/ab -n 2000 -c 50 http://localhost:9000/javaBad
