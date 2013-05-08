@@ -202,6 +202,11 @@ Running Apache Bench again
 Placing operations that return Responses from those operation that do intense computation or IO
 into separate execution contexts (thread pools) of Play doubles the throughput.
 
+### Using the WebServices API
+
+I'm still digging through how the Play WS API works.  I know that it uses Netty (with its own internal
+thread pool). but I still stumped on how Play interacts with Netty to provide this API.
+
 ## More reading:
 
 1. http://engineering.linkedin.com/play/play-framework-async-io-without-thread-pool-and-callback-hell
