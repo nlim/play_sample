@@ -18,7 +18,7 @@ object Application extends Controller {
   def bad = Action {
     // Using the default thread pool to run the intensive computation ties up
     // threads for handling the incoming requests and returning the results
-  implicit val context = play.api.libs.concurrent.Execution.defaultContext
+    implicit val context = play.api.libs.concurrent.Execution.defaultContext
     val futureInt = scala.concurrent.Future { intensiveComputation() }
     Async {
       futureInt.map(i => Ok("Got result: " + i))
@@ -50,6 +50,13 @@ object Application extends Controller {
     }
   }
 
+  def ws = Action {
+    implicit val context = Contexts.myContext
+    val responseFuture = WS.url(url).get()
+    Async {
+      responseFuture.map(response => Ok("Response from: " + url + ": " + response.status))
+    }
+  }
 
 
   private def intensiveComputation() = {

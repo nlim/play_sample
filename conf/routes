@@ -15,5 +15,9 @@ GET     /wsGood                     controllers.WebServices.good
 
 GET     /wsBad                      controllers.WebServices.bad
 
+GET     /wsScala                    controllers.Application.ws
+
+GET     /javaBad                    controllers.WebServices.javaBad
+
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)
